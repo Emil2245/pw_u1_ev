@@ -98,24 +98,168 @@ const fundamentos = () => {
         nombre: 'Emil',
         apellido: 'Verkade',
         edad: 23,
-        genero:'Masculino',
+        genero: 'Masculino',
         ciudad: 'UIO'
     }
     console.log(miProfesor);
     console.log(miProfesor.apellido);
-    miProfesor.apellido='Valdiviezo';
+    miProfesor.apellido = 'Valdiviezo';
     console.log(miProfesor.apellido);
 
-    if (miProfesor.ciudad==='UIO') console.log('capitalino');
+    if (miProfesor.ciudad === 'UIO') console.log('capitalino');
 
-    const estudiante1= {nombre:'Emil', apellido:'Verkade'};
-    const estudiante2= {nombre:'Joel', apellido:'Verkade'};
-    const estudiante3= {nombre:'Kevin', apellido:'Verkade'};
-    const arreglo1= [estudiante1,estudiante2,estudiante3];
+    const estudiante1 = { nombre: 'Emil', apellido: 'Verkade' };
+    const estudiante2 = { nombre: 'Joel', apellido: 'Verkade' };
+    const estudiante3 = { nombre: 'Kevin', apellido: 'Verkade' };
+    const arreglo1 = [estudiante1, estudiante2, estudiante3];
 
     console.log(arreglo1)
     console.table(arreglo1)
-    
 
+
+    const ciudadano = {
+        nombre: 'Emil',
+        apellido: 'Verkade',
+        direccion: {
+            callePrincipal: 'Av. mi casa',
+            calleSecundaria: 'Calle 2',
+            numeracion: '17',
+            barrio: {
+                referencia: 'frente a mi vecino'
+            }
+        }
+    }
+
+    console.log(ciudadano);
+    console.log(ciudadano.nombre);
+    console.log(ciudadano.direccion);
+    console.log(ciudadano.direccion.barrio);
+    ciudadano.direccion.callePrincipal = 'Av amaxonas';
+    console.log(ciudadano.direccion);
+
+
+    const arregloEstudiantes = [estudiante1, estudiante2, estudiante3]
+    console.log(arregloEstudiantes);
+    const arregloEstudiantes2 = [{ nombre: 'Emil', apellido: 'Verkade' },
+    { nombre: 'Juan', apellido: 'Montiel' }]
+    console.log(arregloEstudiantes2);
+    console.log(arregloEstudiantes2[1].apellido);
+
+
+    //Des estructuracion de Arreglos
+
+    const colores = ['red', 'bleu', 'orange', 'marron', 'purple'];
+    const [c1, c2, c3, c4, c5] = colores;
+    console.log(c1);
+
+    const [cuno, cdos, , ccuatro] = colores;
+    console.log(ccuatro);
+
+    const [c01, , c03] = ['red', 'bleu', 'orange', 'marron', 'purple'];
+    console.log(c01);
+    
+    desestructuracionArreglo(colores)
+    
+    const [, p2, p3, , , , , , , , , , p10] = desestructuracionArreglo2();
+    console.log(p2 + p3)
+    console.log(p10)
+    //Este proceso se lo hace a traves de sus posiciones
+
+    
+    
+    
+    //Des estructuracion por Operador REST
+    console.log('Des estructuracion por Operador REST')
+    const[ t1,...resto]= desestructuracionArreglo2()
+    console.log(t1);
+    console.log(resto);
+    
+    
+    
+    
+    //Des estructuracion de Objetos
+    const auto = {
+        marca: 'totoya',
+        modelo: 'prius',
+        anio: 2020,
+        color: 'crayon'
+    }
+    const auto3 = {
+        marcar: 'totoya',
+        modelor: 'prius',
+        anior: 2020,
+        colorr: 'crayon'
+    }
+    
+    const { marca, color, anio } = auto;
+    console.log(color);
+    
+    
+    const { anio1 } = {
+        marca1: 'totoya',
+        modelo1: 'prius',
+        anio1: 2020,
+        color1: 'crayon'
+    }
+    
+    desestructuracionObjeto(auto);
+    
+    const universidad = {
+        nombre: 'uce',
+        direccion: 'america',
+        rector: {
+            nom: 'papanoel',
+            apellido: 'esp'
+        }
+    }
+    const universidad2 = {
+        nombre2: 'uce',
+        direccion2: 'america',
+        rector2: {
+            nom2: 'Lpapanoel',
+            apellido2: 'esp'
+        }
+    }
+    
+    const { rector } = universidad;
+    const { nom } = rector;
+    console.log(nom)
+    
+    const {rector2:{nom2}} = universidad2
+    console.log(nom2)
+    
+    //Des estructuracion por Operador REST
+    console.log('Des estructuracion por Operador REST')
+    const { marcar,...restoo }= auto3
+    console.log(marcar)
+    console.log(restoo)
+    
+    
+    
+    
+    
+    
 }
 
+// desestructuracionArreglo = ([c1,c2,c3]=arreglo)=>{
+desestructuracionArreglo = ([c1, c2, c3]) => {
+    console.log(c1)
+    console.log(c2 + 'hola')
+}
+desestructuracionArreglo2 = () => {
+    const colores = ['rojjjjo', 'azzzul', 'orrrrange', 'macccrron', 'purplep'];
+    return colores;
+}
+desestructuracionObjeto = ({ marca, color }) => {
+    console.log(marca, color)
+}
+
+desestructuracionObjeto2 = () => {
+    const auto = {
+        marca: 'totoya',
+        modelo: 'prius',
+        anio: 2020,
+        color: 'crayon'
+    };
+    return auto;
+}
