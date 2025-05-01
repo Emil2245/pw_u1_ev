@@ -1,0 +1,84 @@
+.container {
+    /* prepara el contenedor para ser manejado para orientarlos de manera horizontal o vertical */
+    display: flex;
+    /* centra horizontalmente*/
+    justify-content: center;
+    /* centra verticalmente*/
+    align-items: center;
+
+    /* background-color: lightcyan; */
+}
+
+body {
+    background: lightskyblue;
+}
+
+p:before {
+    content: attr(type);
+    display: block;
+    margin: 3px;
+    font-size: 18px;
+    color: #5a5a5a;
+    font-weight: bolder;
+}
+
+input {
+    width: 270px;
+    border: none;
+    background: none;
+    border-bottom: 2px solid #bebed2;
+}
+
+input:focus {
+    outline: none;
+    border-bottom: 3px solid lightcyan
+}
+
+h2,
+header {
+    margin: 10px 2px;
+    width: 180px;
+    color: #787878;
+    border-bottom: 3px solid #075b93;
+}
+
+header {
+    font-size: 40px;
+    width: 260px;
+}
+
+.formulario {
+    background-color: rgb(163, 214, 247);
+    border: rgb(119, 119, 119) 2px solid;
+    border-radius: 30px;
+    padding: 30px;
+    box-shadow: 6px 5px rgb(136, 179, 206);
+}
+
+button{
+    
+    border-radius: 8px;
+    border: #5a5a5a solid ;
+    margin-top: 10px;
+    background: #a7cae1;
+    padding: 5px 20px;
+    font-size: 18px;
+}
+
+.centrar-boton{
+    display: flex;
+    justify-content: center;
+}
+
+
+
+
+
+
+input[placeholder] {
+    color: rgb(0, 0, 0);
+}
+
+* {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
